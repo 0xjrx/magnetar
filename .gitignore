@@ -53,3 +53,7 @@ dkms.conf
 
 # debug information files
 *.dwo
+
+# Generated or platform-specific syscall folder
+/src/modules/syscall/
+
