@@ -10,10 +10,7 @@
 #include "patches/patch.h"
 #include <util/util.h>
 
-#ifndef TARGET_PROCESS
-#elif defined(TARGET_PROCESS_SPOOF)
 
-#endif
 
 // Function prototype for PPID spoofing helper
 static BOOL setup_ppid_spoofing(void *startup_info_ex, LPCWSTR spoof_proc_name, BOOL is_wide);
