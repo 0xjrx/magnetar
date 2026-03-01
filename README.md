@@ -117,7 +117,6 @@ magnetar/
 │
 ├── meta/                  # Resources and metadata
 │   ├── meta.rc            # Recourcefile to be compiled with windres, includes metadata for binary
-│   ├── meta.res           # Compiled metadata
 │   └── icons/
 │       └── chrome.ico     # Icon used for metadata config, replace with your own
 │
