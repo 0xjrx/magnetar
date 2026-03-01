@@ -17,7 +17,8 @@
 
 Magnetar is a sophisticated shellcode loader framework for Windows 10 64bit, featuring advanced encryption and obfuscation, ETW and AMSI patching, as well as process protection and direct syscalls through tartarus gate for hook evasion.
 
-The basis of this framework was developed by me, [0xjrx](https://github.com/0xjrx) as part of my bachelors thesis. Magnetar is the advanced version of this, which I adjusted and rewrote in my free time. This project is WIP and only for educational purposes. To prevent any script kiddies from using this framework (as it was able to bypass Sophos EDR) a critical syscall module, responsible for dynamic hashing and direct syscalls, has been removed. You must include your own module for that. 
+The basis of this framework was developed by me, [0xjrx](https://github.com/0xjrx) as part of my bachelors thesis. Magnetar is the advanced version of this, which I adjusted and rewrote in my free time. This project is WIP and only for educational purposes. Because the original implementation could bypass Sophos EDR, the project ships **without** the critical syscall component (dynamic hashing/direct syscalls).
+If you rebuild or reuse Magnetar you’ll need to supply your own syscall module. 
 
 
 ## Features
