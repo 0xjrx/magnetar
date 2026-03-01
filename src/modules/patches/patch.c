@@ -8,6 +8,7 @@
 #include <enum/enum.h>
 #include <util/util.h>
 
+#ifdef NOETW
 bool patchETW_remote(HANDLE hProcess, VX_TABLE vx_table)
 {
 
@@ -62,7 +63,9 @@ bool patchETW_remote(HANDLE hProcess, VX_TABLE vx_table)
     okay("Patched NtTraceEvent in remote process");
     return true;
 }
+#endif
 
+#ifdef NOAMSI
 bool patchAMSI_remote(HANDLE hProcess, VX_TABLE vx_table)
 {
 
@@ -156,3 +159,4 @@ bool patchAMSI_remote(HANDLE hProcess, VX_TABLE vx_table)
     okay("Patched AmsiScanBuffer successfully");
     return true;
 }
+#endif

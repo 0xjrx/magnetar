@@ -63,7 +63,7 @@ python builder.py <input_shellcode> [options]
 | `input` | file path | - | Path to the input shellcode file (e.g., `calc.bin`) |
 | `--encryption` | `ascii` | Encryption/encoding mode |
 | `--technique` |`eb`, `hypnosis`| Execution technique |
-| `--target_process` | process name | `notepad.exe` | Target process for injection techniques |
+| `--target_process` | process name | `notepad.exe` | Target process for injection techniques (doesnt work with all processes, e.g. cmd.exe as it requires conhost)|
 | `--key` | string | `SecretKey1337` | Custom encryption key (5-256 characters) |
 | `--spoof` | process name | `svchost.exe` | Process to spoof as parent (PPID spoofing) |
 | `--clean` | flag | - | Clean build artifacts and exit |

