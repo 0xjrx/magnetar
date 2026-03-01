@@ -1,6 +1,9 @@
+
+
 <p align="center">
-  <img src="./.image/alternative.png" alt="banner">
+  <img src="./.image/banner_mag.png" alt="banner">
 </p>
+
 
 ---
 
