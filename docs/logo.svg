@@ -17,9 +17,9 @@
   </text>
 
   <!-- Subtitle row: name + version -->
-  <text font-family="Consolas, 'Courier New', monospace" font-weight="bold" font-size="11" fill="#c084fc" letter-spacing="3" x="14" y="82">M A G N E T A R</text>
-  <text font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#7d8590" x="210" y="82">0.1</text>
+  <text font-family="Consolas, 'Courier New', monospace" font-weight="bold" font-size="11" fill="#ffffff" letter-spacing="3" x="14" y="82">M A G N E T A R</text>
+  <text font-family="Consolas, 'Courier New', monospace" font-size="11" fill="#ffffff" x="210" y="82">0.1</text>
 
   <!-- Description -->
-  <text font-family="Consolas, 'Courier New', monospace" font-size="9" fill="#a0a0a0" x="14" y="100">Shellcode loader framework for Windows x64</text>
+  <text font-family="Consolas, 'Courier New', monospace" font-size="9" fill="#ffffff" x="14" y="100">Shellcode loader framework for Windows x64</text>
 </svg>
