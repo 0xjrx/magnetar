@@ -82,6 +82,13 @@ venv/
 build/data.h
 build/syscalls.h
 
+# Doxygen generated output (built by GitHub Actions)
+docs/html/
+docs/latex/
+
+# Unused SVG exports
+docs/svgviewer-output*
+docs/magnetar_logo_alt.svg
 
 # C extensions
 *.so

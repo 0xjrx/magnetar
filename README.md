@@ -13,6 +13,7 @@
     <img alt="Linker" src="https://img.shields.io/badge/Linker-GCC-green.svg" />
     <img alt="Encryptor" src="https://img.shields.io/badge/Encryptor-ascii-red.svg" />
     <img alt="Name" src="https://img.shields.io/badge/Magnetar-8A2BE2" />
+    <a href="https://0xjrx.github.io/magnetar/"><img alt="Docs" src="https://img.shields.io/badge/Docs-Doxygen-8A2BE2.svg" /></a>
 </p>
 
 Magnetar is a sophisticated shellcode loader framework for Windows 10 64bit, featuring advanced encryption and obfuscation, ETW and AMSI patching, as well as process protection and direct syscalls through tartarus gate for hook evasion.
