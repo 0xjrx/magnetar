@@ -8,13 +8,14 @@
 ---
 
 <p align="center">
-    <img alt="Version" src="https://img.shields.io/badge/Version-0.1-blue.svg" />
-    <img alt="Compiler" src="https://img.shields.io/badge/Compiler-GCC-green.svg" />
-    <img alt="Linker" src="https://img.shields.io/badge/Linker-GCC-green.svg" />
-    <img alt="Encryptor" src="https://img.shields.io/badge/Encryptor-ascii-red.svg" />
-    <img alt="Name" src="https://img.shields.io/badge/Magnetar-8A2BE2" />
-    <a href="https://0xjrx.github.io/magnetar/"><img alt="Docs" src="https://img.shields.io/badge/Docs-Doxygen-8A2BE2.svg" /></a>
+  <img alt="Version" src="https://img.shields.io/badge/Version-WIP-orange.svg" />
+  <img alt="Language" src="https://img.shields.io/badge/Language-C%2FPython-blue.svg" />
+  <img alt="Platform" src="https://img.shields.io/badge/Platform-Windows%2010%2064bit-blue.svg" />
+  <img alt="Encryption" src="https://img.shields.io/badge/Encryption-RC4%2FASCII-red.svg" />
+  <img alt="Syscalls" src="https://img.shields.io/badge/Syscalls-Tartarus%20Gate-8A2BE2.svg" />
+  <a href="https://0xjrx.github.io/magnetar/"><img alt="Docs" src="https://img.shields.io/badge/Docs-Available-8A2BE2.svg" /></a>
 </p>
+
 
 Magnetar is a sophisticated shellcode loader framework for Windows 10 64bit, featuring advanced encryption and obfuscation, ETW and AMSI patching, as well as process protection and direct syscalls through tartarus gate for hook evasion.
 
