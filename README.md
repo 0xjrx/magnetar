@@ -42,6 +42,14 @@ If you rebuild or reuse Magnetar you’ll need to supply your own syscall module
 - **AMSI Patching**: Antimalware Scan Interface bypass using Hell's Gate syscalls
 - **Complete Syscall Obfuscation**: All critical operations use direct syscalls to avoid userland hooks
 
+### Planned Features
+- **Module Stomping**: Instead of writing shellcode to a processes address space, load and stomp a given module with shellcode
+- **DLL Injection**: As of now, the result is a shellcode loader, however, DLL injection (reflective etc.) may be even more advanced. I want to implement that in further updates
+- **Certificate Spoofing**: Sign the binary with a spoofed Cert to make it appear legit
+- **Stack spoofing**: Instead of creating pretty much textbook IOC stackframes, use 'SilentMoonWalk' or 'LoudSunRun' to spoof callstacks
+- **Beacon functionality**: As of now normal shellcodes and meterpreter payloads work, I want to add my own payload/beacon and maybe add sleep obfuscation to evade memory scanners
+- **BYOVD (Bring your own vulnerable driver)**: Utilize vulnerable drivers to elevate privileges
+- **PE Payloads**: Functionality to encrypt and load whole PE files through the loader
 ## Usage
 
 ```sh
