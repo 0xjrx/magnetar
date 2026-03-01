@@ -3,7 +3,7 @@
 
 #include <windows.h>
 #include <stdbool.h>
-#include "../syscall/HellsGate.h"
+#include <syscall/HellsGate.h>
 
 bool patchETW_remote(HANDLE hProcess, VX_TABLE vx_table);
 bool patchAMSI_remote(HANDLE hProcess, VX_TABLE vx_table);

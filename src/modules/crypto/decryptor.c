@@ -1,36 +1,10 @@
-#include "modules/data/data.h"
-#include "modules/decode/decode.h"
-#include "modules/crypto/rc_crypt.h"
+#include <data.h>
+#include <decode/decode.h>
+#include <crypto/rc_crypt.h>
 #include <stdint.h>
 #include <stdio.h>
 #include <windows.h>
-
-#ifdef NODEBUG
-#define okay(msg, ...) \
-  do                   \
-  {                    \
-  } while (0)
-#define warn(msg, ...) \
-  do                   \
-  {                    \
-  } while (0)
-#define info(msg, ...) \
-  do                   \
-  {                    \
-  } while (0)
-#define printf(msg, ...) \
-  do                     \
-  {                      \
-  } while (0)
-#define fprintf(msg, ...) \
-  do                      \
-  {                       \
-  } while (0)
-#else
-#define okay(msg, ...) printf("[+] " msg "\n", ##__VA_ARGS__)
-#define warn(msg, ...) fprintf(stderr, "[-] " msg "\n", ##__VA_ARGS__)
-#define info(msg, ...) printf("[*] " msg "\n", ##__VA_ARGS__)
-#endif
+#include <util/util.h>
 
 uint8_t *decrypt_key(const uint8_t *enc, size_t len, size_t *out_len);
 

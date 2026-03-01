@@ -66,41 +66,57 @@ python builder.py <input_shellcode> [options]
 ```
 magnetar/
 ├── builder.py             # Main build script
-├── common/                # Shared utilities
-│   ├── __init__.py        # Encryption and encoding functions
-├── src/                   # Source code
-│   ├── loader.c           # Main loader implementation
+│
+├── build/                 # Generated headers & binaries
+│   ├── data.h             # Encrypted shellcode (generated)
+│   └── syscalls.h         # Generated syscall hashes
+│
+├── common/                # Python utilities used by builder
+│   ├── __init__.py        # package initializer
+│   ├── crypto.py          # RC4, key encryption routines
+│   ├── encoder.py         # ascii encoding helpers
+│   └── helper.py          # small utility functions (file I/O, etc.)
+│
+├── include/               # Public C headers (used with -Iinclude)
+│   ├── crypto/
+│   │   ├── decryptor.h
+│   │   └── rc_crypt.h
+│   ├── decode/
+│   │   └── decode.h
+│   ├── enum/
+│   │   └── enum.h
+│   ├── patches/
+│   │   └── patch.h
+│   ├── syscall/
+│   │   ├── HellsGate.h    # Removed to prevent misuse
+│   │   └── structs.h      # Removed to prevent misuse
+│   └── util/
+│       └── util.h         # logging 
+│
+├── src/                   # C implementation code
+│   ├── main.c             # Entry point (formerly loader.c)
 │   └── modules/
-│       ├── crypto/        # Encryption/decryption modules
-│       │   ├── decryptor.h
+│       ├── crypto/
 │       │   ├── decryptor.c
-│       │   ├── rc_crypt.c
-│       │   └── rc_crypt.h
-│       ├── data/          # Generated data headers
-│       │   └── data.h     # Encrypted shellcode (generated)
-│       ├── decode/        # Decoding modules
-│       │   ├── decode.c
-│       │   └── decode.h
-│       ├── enum/          # Process enumeration
-│       │   ├── enum.c
-│       │   └── enum.h
-│       ├── icons/         # Application icons
-│       │   └── chrome.ico
-│       ├── meta/          # Metadata and resources
-│       │   ├── meta.rc
-│       │   ├── meta.res
-│       │   └── meta.o
-│       ├── patches/       # Module for patches, incl. ETW/AMSI
-│           ├── patch.c
-│       │   └── patch.h
-│       └── syscall/       # System call modules
-│           ├── HellsGate.asm
-│           ├── HellsGate.c
-│           ├── HellsGate.h
-│           ├── HellsGate.obj
-│           ├── syscalls.c
-│           └── structs.h
-├── calc.bin             # Example calc pop
-└── README.md            # This file
+│       │   └── rc_crypt.c
+│       ├── decode/
+│       │   └── decode.c
+│       ├── enum/
+│       │   └── enum.c
+│       ├── patches/
+│       │   └── patch.c
+│       └── syscall/
+│           ├── HellsGate.asm # Removed to prevent misuse
+│           ├── HellsGate.c   # Removed to prevent misuse
+│           └── HellGate.obj  # Removed to prevent misuse       
+│
+├── meta/                  # Resources and metadata
+│   ├── meta.rc            # Recourcefile to be compiled with windres, includes metadata for binary
+│   ├── meta.res           # Compiled metadata
+│   └── icons/
+│       └── chrome.ico     # Icon used for metadata config, replace with your own
+│
+├── calc.bin               # Example shellcode payload
+└── README.md              # This file
 ```
 

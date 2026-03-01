@@ -5,33 +5,7 @@
 #include <psapi.h>
 #include <wchar.h>
 #include <winternl.h>
-
-#ifdef NODEBUG
-#define okay(msg, ...) \
-  do                   \
-  {                    \
-  } while (0)
-#define warn(msg, ...) \
-  do                   \
-  {                    \
-  } while (0)
-#define info(msg, ...) \
-  do                   \
-  {                    \
-  } while (0)
-#define printf(msg, ...) \
-  do                     \
-  {                      \
-  } while (0)
-#define fprintf(msg, ...) \
-  do                      \
-  {                       \
-  } while (0)
-#else
-#define okay(msg, ...) printf("[+] " msg "\n", ##__VA_ARGS__)
-#define warn(msg, ...) fprintf(stderr, "[-] " msg "\n", ##__VA_ARGS__)
-#define info(msg, ...) printf("[*] " msg "\n", ##__VA_ARGS__)
-#endif
+#include <util/util.h>
 
 typedef NTSTATUS(NTAPI *PFN_NT_QUERY_SYSTEM_INFORMATION)(
     SYSTEM_INFORMATION_CLASS, PVOID, ULONG, PULONG);

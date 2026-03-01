@@ -1,13 +1,15 @@
-#include "modules/crypto/decryptor.h"
+#include "crypto/decryptor.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
 #include <windows.h>
 #include <sddl.h>
-#include "modules/syscall/HellsGate.h"
-#include "modules/enum/enum.h"
-#include "modules/patches/patch.h"
+#include "syscall/HellsGate.h"
+#include "enum/enum.h"
+#include "patches/patch.h"
+#include <util/util.h>
+
 #ifndef TARGET_PROCESS
 #elif defined(TARGET_PROCESS_SPOOF)
 
@@ -15,38 +17,6 @@
 
 // Function prototype for PPID spoofing helper
 static BOOL setup_ppid_spoofing(void *startup_info_ex, LPCWSTR spoof_proc_name, BOOL is_wide);
-
-#ifdef NODEBUG
-#define okay(msg, ...) \
-  do                   \
-  {                    \
-  } while (0)
-#define warn(msg, ...) \
-  do                   \
-  {                    \
-  } while (0)
-#define fail(msg, ...) \
-  do                   \
-  {                    \
-  } while (0)
-#define info(msg, ...) \
-  do                   \
-  {                    \
-  } while (0)
-#define printf(msg, ...) \
-  do                     \
-  {                      \
-  } while (0)
-#define fprintf(msg, ...) \
-  do                      \
-  {                       \
-  } while (0)
-#else
-#define okay(msg, ...) printf("[+] " msg "\n", ##__VA_ARGS__)
-#define warn(msg, ...) fprintf(stderr, "[!] " msg "\n", ##__VA_ARGS__)
-#define fail(msg, ...) fprintf(stderr, "[-] " msg "\n", ##__VA_ARGS__)
-#define info(msg, ...) printf("[*] " msg "\n", ##__VA_ARGS__)
-#endif
 
 static int pr_enum(LPCWSTR gProcName, DWORD *PID, HANDLE *hProcess)
 {
