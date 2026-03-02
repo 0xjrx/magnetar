@@ -12,7 +12,7 @@
   <img alt="Platform" src="https://img.shields.io/badge/Platform-Windows%2010%2064bit-blue.svg" />
   <img alt="Encryption" src="https://img.shields.io/badge/Encryption-RC4%2FASCII-red.svg" />
   <img alt="Syscalls" src="https://img.shields.io/badge/Syscalls-Tartarus%20Gate-8A2BE2.svg" />
-  <a href="https://0xjrx.github.io/magnetar/"><img alt="Docs" src="https://img.shields.io/badge/Docs-Available-8A2BE2.svg" /></a>
+  <a href="https://0xjrx.github.io/magnetar/index.html"><img alt="Docs" src="https://img.shields.io/badge/Docs-Available-8A2BE2.svg" /></a>
 </p>
 
 
