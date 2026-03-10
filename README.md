@@ -100,6 +100,8 @@ magnetar/
 │   │   └── enum.h
 │   ├── patches/
 │   │   └── patch.h
+│   ├── protection/
+│   │   └── protect.h
 │   ├── syscall/
 │   │   ├── HellsGate.h    # Removed to prevent misuse
 │   │   └── structs.h      # Removed to prevent misuse
@@ -118,10 +120,12 @@ magnetar/
 │       │   └── enum.c
 │       ├── patches/
 │       │   └── patch.c
+│       ├── protection/
+│       │   └── protect.c
 │       └── syscall/
 │           ├── HellsGate.asm # Removed to prevent misuse
 │           ├── HellsGate.c   # Removed to prevent misuse
-│           └── HellGate.obj  # Removed to prevent misuse       
+│           └── HellsGate.obj  # Removed to prevent misuse       
 │
 ├── meta/                  # Resources and metadata
 │   ├── meta.rc            # Recourcefile to be compiled with windres, includes metadata for binary
